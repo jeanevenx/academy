@@ -1,15 +1,14 @@
 package edu.bootcamp.academy.model.form;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.br.CPF;
 
-import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 @Data
@@ -28,5 +27,7 @@ public class StudentFormUpdate {
     @NotEmpty(message = "Preencha o campo corretamente.")
     @Size(max =9, message = "'${validatedValue}' precisa estar entre {min} e {max} caracteres.")
     private String cep;
+
+    private String complemento;
 
 }
