@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class EvaluationForm {
 
     @Positive(message = "O Id do aluno precisa ser positivo.")
-    private Integer StudentId;
+    private Integer studentId;
 
     @NotNull(message = "Preencha o campo corretamente.")
     @Positive(message = "${validatedValue}' precisa ser positivo.")

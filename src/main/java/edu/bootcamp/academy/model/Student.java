@@ -19,6 +19,7 @@ import java.util.List;
 @Table(name = "tb_student")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Student {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

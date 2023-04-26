@@ -1,11 +1,11 @@
 package edu.bootcamp.academy.model;
 
+import edu.bootcamp.academy.DTO.StudentInfo;
+import edu.bootcamp.academy.model.form.StudentForm;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-//import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
@@ -19,9 +19,8 @@ public class Enrollment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "student_id")
-    private Student student;
+    @Embedded
+    private StudentInfo StudentInfo;
 
     private LocalDateTime enrollmentDate = LocalDateTime.now();
 }
